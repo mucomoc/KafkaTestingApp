@@ -27,6 +27,15 @@ namespace KafkaTestingApp
                     context.People.Add(new Models.Person { Name = "John Doe" });
                     context.SaveChanges();
                 }
+                
+                var records = context.People.ToList();
+                
+                foreach (var record in records)
+                {
+                    Console.WriteLine("Id: " + record.Id);
+                    Console.WriteLine("Name: " + record.Name);
+                    Console.WriteLine("==============================");
+                }
             }
         }
     }
